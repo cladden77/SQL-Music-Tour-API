@@ -3,6 +3,16 @@ const express = require('express')
 const app = express()
 const { Sequelize } = require('sequelize')
 
+// CONTROLLERS 
+const bandsController = require('./controllers/bands_controller')
+app.use('/bands', bandsController)
+
+const eventsController = require('./controllers/events_controller')
+app.use('/events', eventsController)
+
+const stagesController = require('./controllers/stages_controller')
+app.use('/stages', stagesController)
+
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
 app.use(express.json())
